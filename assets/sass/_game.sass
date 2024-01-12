@@ -1,0 +1,190 @@
+@use 'variables'
+@use 'utilities'
+
+.container-game
+    display: block
+    width: 100%
+    max-width: 500px
+    text-align: center
+    position: relative
+
+    &.hidden
+        display: none
+
+    &-settings
+        font-size: 35px
+        position: absolute
+        right: 10px
+        top: 12px
+
+        @include utilities.mobile
+            right: 10px
+            top: 5px
+
+        .btn-options
+            cursor: pointer
+            transition: .3s
+
+            &:hover
+                transform: scale(1.2)
+
+            &.hidden
+                display: none
+
+        .container-options
+            display: flex
+            flex-direction: column
+            width: 200px
+            background: variables.$bg-dark
+            padding: 20px 10px
+            border-radius: 15px
+            z-index: 10
+            position: absolute
+            right: 0
+            top: 10px
+
+            &.hidden
+                display: none
+
+            .close-options
+                position: absolute
+                right: 10px
+                top: 10px
+                cursor: pointer
+                border: 1px solid transparent
+                transition: .3s
+                border-radius: 50%
+
+                &:hover
+                    border-color: variables.$white
+
+            &-sounds
+                font-size: 30px
+                @include utilities.center-elements
+
+                .sound, .sound-muted
+                    padding: 5px
+                    border-radius: 50%
+                    border: 1px solid variables.$white
+                    cursor: pointer
+                    transition: .3s
+                    &:hover
+                        transform: scale(1.1)
+
+                .sound
+                    &.hidden
+                        display: none
+
+                .sound-muted
+                    &.hidden
+                        display: none
+
+            .container-volume
+                margin-top: 10px
+                display: flex
+                flex-direction: column
+                gap: 10px
+                width: 100%
+
+                &.hidden
+                    display: none
+
+                label
+                    font-size: 16px
+
+                .volume-controller
+                    margin: 0 auto
+                    width: 160px
+                    cursor: pointer
+
+    &-upper
+        margin-top: 50px
+        width: 100%
+
+        h1
+            @include utilities.title-style
+
+        hr
+            margin: 20px 0
+
+        h1, hr
+            @include utilities.mobile
+                display: none
+
+        .view-level
+            position: absolute
+            top: 65px
+            right: 10px
+            font-family: 'arial', sans-serif
+            font-size: 20px
+
+            @include utilities.mobile
+                top: 10px
+                right: calc(50% - 25.25px)
+
+            #level
+                font-size: 20px
+                font-family: 'arial', sans-serif
+
+        &-word
+
+            font-family: 'Rubik', sans-serif
+            letter-spacing: 2px
+
+            h2
+                @include utilities.mobile
+                    display: none
+
+            .word-display
+                padding: 0 10px
+                @include utilities.center-elements
+                margin: 20px 0
+                gap: 10px
+
+                @include utilities.mobile
+                    display: flex
+                    flex-wrap: wrap
+
+                .circle
+                    @include utilities.center-elements
+                    font-size: 20px
+                    font-weight: bold
+                    width: 32px
+                    height: 32px
+                    background: variables.$white
+                    font-family: 'arial', sans-serif
+                    border-radius: 50%
+                    color: variables.$black
+
+    &-keyboard
+        width: 100%
+        margin: 25px auto
+        @include utilities.center-elements
+        flex-direction: column
+
+        @include utilities.mobile
+            margin: 10px 0
+
+        .container-letters
+            width: 100%
+            margin-top: 20px
+            display: grid
+            gap: 15px 5px
+            grid-template-columns: repeat(7, 13%)
+            grid-template-rows: repeat(3 , 50px)
+
+            @include utilities.mobile
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                padding: 0 5px
+                margin-top: 10px
+
+        .table-vowels
+            width: 55%
+
+            @include utilities.mobile
+                width: 60%
+            tr
+                gap: 2px
+                grid-template-columns: repeat(5 , 20%)

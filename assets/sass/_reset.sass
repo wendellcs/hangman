@@ -1,0 +1,39 @@
+@use 'variables'
+@use 'utilities'
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+    height: 100%
+
+body
+    background: variables.$bg-color
+    font-size: 1.8rem
+    color: variables.$secondary-color
+    font-family: 'Montserrat', sans-serif
+
+h1
+    @include utilities.title-style
+
+li
+    list-style: none
+
+main
+    display: relative
+
+button
+    cursor: pointer
+
+input
+    outline: none
+    text-transform: uppercase
+    text-align: center
+
+.container
+    width: 100%
+    @include utilities.center-elements
+    flex-direction: column

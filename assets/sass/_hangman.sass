@@ -1,0 +1,309 @@
+@use 'variables'
+@use 'utilities'
+
+.container-game
+    &-hangman
+        border: 5px solid variables.$primary-color
+        box-shadow: 0 0 15px variables.$primary-color
+        border-radius: 15px
+        margin: 0 auto
+        width: 80%
+        max-width: 450px
+        height: 320px
+        background: #cecece
+        position: relative
+
+        .hangman-pole
+
+            .vertical, .horizontal,.block, .rope, .sup
+                position: absolute
+                border: 1px solid #442e23
+                background: #6d4836
+
+            .vertical
+                bottom: 0
+                left: 60px
+                width: 15px
+                height: 270px
+
+                @include utilities.mobile-hangman
+                    left: 30px
+
+            .horizontal
+                border-radius: 5px
+                top: -50px
+                width: 15px
+                height: 185px
+                left: 135px
+                transform: rotate(90deg)
+
+                @include utilities.mobile-hangman
+                    left: 105px
+
+            .sup
+                width: 80px
+                height: 17px
+                bottom: 0
+                left: 28px
+                border-radius: 5px 5px 0 0
+
+                @include utilities.mobile-hangman
+                    left: 2px
+
+            .block
+                width: 25px
+                height: 10px
+                left: 200px
+                border-top: none
+                top: 50px
+
+                @include utilities.mobile-hangman
+                    left: 170px
+
+            .rope
+                left: 210px
+                top: 60px
+                width: 5px
+                height: 40px
+                background: #a7765d
+
+                @include utilities.mobile-hangman
+                    left: 180px
+
+        .hangman-body
+            .container-head
+                background: #00000021
+                position: absolute
+                width: 50px
+                height: 50px
+                border: 5px solid variables.$black
+                top: 98px
+                left: 188px
+                border-radius: 50%
+                @include utilities.center-elements
+                gap: 5px
+                flex-direction: column
+
+                @include utilities.mobile-hangman
+                    left: 158px
+
+                &.hidden
+                    display: none
+
+                &-eyes
+                    margin-top: 5px
+                    @include utilities.center-elements
+                    gap: 5px
+
+                    .eye
+                        width: 10px
+                        height: 10px
+                        border: 2px solid variables.$black
+                        background: variables.$white
+                        border-radius: 50%
+
+                        &.dead
+                            background: variables.$black
+                            border: none
+                            border-radius: 0
+                            width: 12px
+                            height: 3px
+                            position: relative
+                            transform: rotate(-45deg)
+
+                            &:after
+                                content: ''
+                                position: absolute
+                                width: 12px
+                                background: variables.$black
+                                top: 0
+                                left: 0
+                                height: 3px
+                                transform: rotate(-90deg)
+
+                .mouth
+                    width: 20px
+                    height: 10px
+                    border-top: 2px solid variables.$black
+                    border-radius: 40%
+
+                    &.dead
+                        display: none
+
+            .hangman-rope
+                position: absolute
+                width: 15px
+                height: 8px
+                z-index: 11
+                background: #a7765d
+                top: 146px
+                left: 206px
+                border: 1px solid variables.$black
+                border-radius: 50%
+
+                @include utilities.mobile-hangman
+                    left: 176px
+
+                &.hidden
+                    display: none
+
+            .body
+                position: absolute
+                height: 70px
+                width: 20px
+                border-radius: 50px 50px 30px 30px
+                background: #be3838fd
+                top: 150px
+                left: 203px
+                display: flex
+                justify-content: center
+                z-index: 1
+
+                @include utilities.mobile-hangman
+                    left: 173px
+
+                &.hidden
+                    display: none
+
+                .collar
+                    z-index: 10
+                    position: absolute
+                    width: 10px
+                    height: 8px
+                    background: variables.$black
+                    border-radius: 0 0 10px 10px
+
+            .left-arm , .right-arm , .left-leg , .right-leg
+                position: absolute
+                background: variables.$black
+                border-radius: 50px
+
+                &.hidden
+                    display: none
+
+            .left-arm , .right-arm
+                width: 8px
+                height: 50px
+                top: 150px
+
+                .shirt-sleeve
+                    position: absolute
+                    background: #be3838fd
+                    width: 12px
+                    height: 20px
+
+                    .line
+                        position: absolute
+                        width: 12px
+                        height: 3px
+                        background: variables.$white
+                        bottom: -1px
+                        border-radius: 0 0 10px 10px
+
+            .left-arm
+                left: 189px
+                transform: rotate(30deg)
+
+                @include utilities.mobile-hangman
+                    left: 159px
+
+                .shirt-sleeve
+                    top: -2px
+                    left: -3px
+                    border-radius: 10px 0 0 0
+
+            .right-arm
+                left: 229px
+                transform: rotate(-30deg)
+
+                @include utilities.mobile-hangman
+                    left: 199px
+
+                .shirt-sleeve
+                    top: -2px
+                    left: -1px
+                    border-radius: 0 10px 0 0
+
+            .left-leg , .right-leg
+                width: 12px
+                height: 65px
+                top: 210px
+                background: #051222
+
+            .left-leg
+                left: 198px
+                transform: rotate(10deg)
+
+                @include utilities.mobile-hangman
+                    left: 168px
+
+            .right-leg
+                left: 216px
+                transform: rotate(-10deg)
+
+                @include utilities.mobile-hangman
+                    left: 186px
+
+            .right-foot, .left-foot
+                position: absolute
+                background: #502323
+                width: 25px
+                height: 10px
+                bottom: 35px
+
+                .shoelace
+                    width: 2px
+                    height: 5px
+                    background: #fff
+                    position: relative
+
+                .sole
+                    margin-top: 2px
+                    width: 25px
+                    height: 3px
+                    background: #cf7878
+                    border-radius: 0 0 50px 20px
+
+            .right-foot
+                left: 220px
+                border-radius: 5px 10px 0 5px
+                transform: rotate(-10deg)
+
+                @include utilities.mobile-hangman
+                    left: 190px
+
+                &.hidden
+                    display: none
+
+                .shoelace
+                    margin-left: 7px
+
+                    &:after
+                        content: ''
+                        margin-left: 3px
+                        width: 2px
+                        height: 5px
+                        background: variables.$white
+                        position: absolute
+
+            .left-foot
+                left: 181px
+                border-radius: 10px 5px 5px 0
+                transform: rotate(10deg)
+
+                @include utilities.mobile-hangman
+                    left: 151px
+
+                &.hidden
+                    display: none
+
+                .shoelace
+                    margin-left: 11px
+
+                    &:after
+                        content: ''
+                        margin-left: 3px
+                        width: 2px
+                        height: 5px
+                        background: variables.$white
+                        position: absolute

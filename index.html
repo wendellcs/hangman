@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="container-start">
+                <h1>Hangman</h1>
+                <div class="container-start-line"></div>
+
+                <button class="btn start-game">Start</button>
+
+                <div class="container-start-icon">
+                    <div class="container-start-icon-btnHtp">
+                        <p class="htp-text">Don't know how to play?</p>
+                        <div class="container-start-icon-btnHtp-circle">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-start-howtoplay hidden">
+                    <h2>How to play</h2>
+                    <ul>
+                        <li>
+                            <p>(1) - You can guess one letter at a time. </p>
+                        </li>
+                        <li>
+                            <p>
+                                (2) - If a guessed letter is in the word, the letter will fill the corresponding
+                                blanks spaces.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                (3) - If a guessed letter is not in the word, a part of the hangman will be drawn.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                (4) - You can continue guessing until you either correctly guess the word or the
+                                hangman isfully drawn.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container-start-laguages">
+                    <button class="portuguese"><img src="assets/images/brazil-flag.png" alt="Brazil Flag"></button>
+                    <button class="english selected"><img src="assets/images/united-states-flag.png"
+                            alt="United States Flag"></button>
+                </div>
+
+            </div>
+            <div class="container-game hidden">
+                <div class="container-game-settings">
+                    <ion-icon name="settings-outline" class="btn-options"></ion-icon>
+                    <div class="container-options hidden">
+                        <ion-icon name="close-outline" class="close-options"></ion-icon>
+                        <div class="container-options-sounds">
+                            <ion-icon name="volume-high-outline" class="sound"></ion-icon>
+                            <ion-icon name="volume-mute-outline" class="sound-muted hidden"></ion-icon>
+                        </div>
+                        <div class="container-volume">
+                            <label for="volume">Volume:</label>
+                            <input type="range" id="volume" class="volume-controller" name="volume" min="0" max="100"
+                                value="20">
+                        </div>
+                    </div>
+                </div>
+                <div class="container-game-upper">
+                    <h1>Hangman</h1>
+                    <p class="view-level"><span id="level">1 </span>/ 10</p>
+                    <hr />
+
+                    <div class="container-game-upper-word">
+                        <h2>Word</h2>
+
+                        <div class="word-display">
+                        </div>
+                    </div>
+                </div>
+                <div class="container-game-hangman">
+                    <div class="hangman-pole">
+                        <div class="vertical"></div>
+                        <div class="horizontal"></div>
+                        <div class="sup"></div>
+                        <div class="block"></div>
+                        <div class="rope"></div>
+                    </div>
+
+                    <!-- Hangman -->
+                    <div class="hangman-body">
+                        <!-- Head -->
+                        <div class="container-head hidden">
+                            <div class="container-head-eyes">
+                                <div class="eye"></div>
+                                <div class="eye"></div>
+                            </div>
+                            <div class="mouth"></div>
+                        </div>
+
+                        <!-- Rope -->
+                        <div class="hangman-rope hidden"></div>
+
+                        <!-- Body -->
+                        <div class="body hidden">
+                            <div class="collar"></div>
+                        </div>
+
+                        <!-- Arms -->
+                        <div class="left-arm hidden">
+                            <div class="shirt-sleeve">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                        <div class="right-arm hidden">
+                            <div class="shirt-sleeve">
+                                <div class="line"></div>
+                            </div>
+                        </div>
+
+                        <!-- Legs -->
+                        <div class="left-leg hidden"></div>
+                        <div class="right-leg hidden"></div>
+
+                        <!-- Feet -->
+                        <div class="left-foot hidden">
+                            <div class="shoelace"></div>
+                            <div class="sole"></div>
+                        </div>
+                        <div class="right-foot hidden">
+                            <div class="shoelace"></div>
+                            <div class="sole"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-game-keyboard">
+                    <table class="table-vowels">
+                        <tr>
+                            <td>
+                                <button class="btn keyboard">A</button>
+                            </td>
+                            <td>
+                                <button class="btn keyboard">E</button>
+                            </td>
+                            <td>
+                                <button class="btn keyboard">I</button>
+                            </td>
+                            <td>
+                                <button class="btn keyboard">O</button>
+                            </td>
+                            <td>
+                                <button class="btn keyboard">U</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="container-letters">
+                        <button class="btn keyboard">Q</button>
+                        <button class="btn keyboard">W</button>
+                        <button class="btn keyboard">R</button>
+                        <button class="btn keyboard">T</button>
+                        <button class="btn keyboard">Y</button>
+                        <button class="btn keyboard">P</button>
+                        <button class="btn keyboard">S</button>
+
+                        <button class="btn keyboard">D</button>
+                        <button class="btn keyboard">F</button>
+                        <button class="btn keyboard">G</button>
+                        <button class="btn keyboard">H</button>
+                        <button class="btn keyboard">J</button>
+                        <button class="btn keyboard">K</button>
+                        <button class="btn keyboard">L</button>
+
+                        <button class="btn keyboard">Z</button>
+                        <button class="btn keyboard">X</button>
+                        <button class="btn keyboard">C</button>
+                        <button class="btn keyboard">V</button>
+                        <button class="btn keyboard">B</button>
+                        <button class="btn keyboard">N</button>
+                        <button class="btn keyboard">M</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-gameOver hidden">
+                <h1 class="game-over-message">Game Over!</h1>
+                <h2 class="game-over-score">Level: <span id="level">10</span> / 10</h2>
+                <p class="last-word"></p>
+                <div class="container-gameOver-buttons">
+                    <button class="btn play-again">Play Again</button>
+                    <button class="btn leave">Leave</button>
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer">
+            <div class="container-credits">
+                <div class=" container-credits-links">
+                    <a href="https://wendellcs.github.io" target="_blank">
+                        <ion-icon class="icon" name="code-slash-outline"></ion-icon>
+                    </a>
+                    <a href="https://github.com/wendellcs" target="_blank">
+                        <ion-icon class="icon" name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://linkedin.com/in/wendellcsilva" target="_blank">
+                        <ion-icon class="icon" name="logo-linkedin"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <audio src="./assets/sounds/correctAnswer.wav" class="audio"></audio>
+    <audio src="./assets/sounds/lose.wav" class="audio"></audio>
+    <audio src="./assets/sounds/nextLevel.mp3" class="audio"></audio>
+    <audio src="./assets/sounds/victory.wav" class="audio"></audio>
+    <audio src="./assets/sounds/click.mp3" class="audio"></audio>
+    <script src="js/scripts.js"></script>
+    <!-- Ion Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

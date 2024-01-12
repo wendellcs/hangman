@@ -1,0 +1,50 @@
+@use 'variables'
+@use 'utilities'
+
+.btn
+    font-size: 18px
+    font-weight: bolder
+    color: variables.$font-dark-color
+    background: variables.$primary-color
+    margin: 0 auto
+    border: 1px solid variables.$primary-color
+    width: 200px
+    height: 45px
+    font-size: 18px
+    letter-spacing: 2px
+    border-radius: 20px
+    transition: .5s
+
+    &:hover
+        background: transparent
+        color: variables.$primary-color
+        box-shadow: 0 0 15px variables.$primary-color
+
+    &.keyboard
+        width: 55px
+        height: 55px
+        background: variables.$btn-dark-bg
+        border: 1px solid variables.$primary-color
+        border-radius: 10px
+        color: variables.$primary-color
+        font-weight: bold
+        font-size: 18px
+        transition: .3s
+
+        @include utilities.mobile
+            width: 45px
+            height: 45px
+
+        &:hover
+            transform: scale(1.1)
+
+        &.clicked
+            @include utilities.drop-animation
+
+            &.hidden
+                animation: none
+                display: none
+
+                @include utilities.mobile
+                    width: 45px
+                    height: 45px

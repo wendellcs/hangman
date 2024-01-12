@@ -1,0 +1,63 @@
+@use 'variables'
+
+@mixin mobile
+    @media(max-width: 375px)
+        @content
+
+@mixin mobile-hangman
+    @media(max-width: 330px)
+        @content
+
+@mixin title-style
+    color: variables.$primary-color
+    font-size: 38px
+    letter-spacing: 5px
+    font-family: 'Rubik Doodle Shadow', sans-serif
+
+@mixin center-elements
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin drop-animation
+    animation: drop-animation .3s linear
+
+@mixin shiny-animation
+    animation: shiny 1.8s linear infinite
+
+@keyframes drop-animation
+    0%
+        transform: translate3d(15px, -20px, 50px) rotate(15deg)
+
+    15%
+        transform: translate3d(25px, -30px, 80px) rotate(45deg)
+
+    30%
+        transform: translate3d(40px, -45px, 10px) rotate(60deg)
+
+    45%
+        transform: translate3d(60px, -20px, 20px) rotate(80deg)
+
+    60%
+        transform: translate3d(80px, 0px, 30px) rotate(100deg)
+
+    75%
+        transform: translate3d(100px, 200px, 40px) rotate(130deg)
+
+    90%
+        transform: translate3d(150px, 500px, 50px) rotate(145deg)
+
+    100%
+        transform: translate3d(200px, 700px, 60px) rotate(180deg)
+
+@keyframes shiny
+    0%
+        box-shadow: 0 0 8px variables.$primary-color
+    25%
+        box-shadow: 0 0 15px variables.$primary-color
+    50%
+        box-shadow: 0 0 30px variables.$primary-color
+    75%
+        box-shadow: 0 0 15px variables.$primary-color
+    100%
+        box-shadow: 0 0 8px variables.$primary-color

@@ -1,0 +1,29 @@
+@use 'variables'
+
+#footer
+    .container-credits
+        display: block
+        margin-top: 50px
+
+        &.hidden
+            display: none
+
+        &-links
+            display: flex
+            justify-content: center
+            gap: 20px
+
+            a
+                margin-top: 10px
+                color: variables.$icon-dark-bg
+
+                .icon
+                    font-size: 30px
+                    transition: .3s
+
+                    &:hover
+                        transform: scale(1.2)
+
+                &:last-of-type
+                    .icon
+                        color: variables.$icon-blue-bg

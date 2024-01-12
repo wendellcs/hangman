@@ -1,0 +1,40 @@
+@use 'variables'
+@use 'utilities'
+
+.container-gameOver
+    margin-top: 10%
+    padding: 70px 40px
+    border-radius: 30px
+    border: 1px solid variables.$primary-color
+    @include utilities.center-elements
+    text-align: center
+    @include utilities.shiny-animation
+    flex-direction: column
+    gap: 20px
+    background: variables.$gameOver-bg-color
+
+    @include utilities.mobile
+        width: 100%
+        border-right: none
+        border-left: none
+        border-radius: 0
+        padding: 50px 5px
+
+    &.hidden
+        display: none
+
+    h2
+        margin-bottom: 20px
+
+    &-buttons
+        display: flex
+        gap: 10px
+
+        @include utilities.mobile
+            flex-direction: column
+        .btn
+            width: 140px
+
+            &.leave
+                background: transparent
+                color: variables.$primary-color
