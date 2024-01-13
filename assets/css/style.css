@@ -477,9 +477,10 @@ input {
   width: 100%;
   margin-top: 20px;
   display: grid;
-  gap: 15px 5px;
+  justify-content: space-between;
   grid-template-columns: repeat(7, 13%);
   grid-template-rows: repeat(3, 50px);
+  gap: 10px 0;
 }
 @media (max-width: 375px) {
   .container-game-keyboard .container-letters {
@@ -495,12 +496,8 @@ input {
 }
 @media (max-width: 375px) {
   .container-game-keyboard .table-vowels {
-    width: 60%;
+    width: 80%;
   }
-}
-.container-game-keyboard .table-vowels tr {
-  gap: 2px;
-  grid-template-columns: repeat(5, 20%);
 }
 
 .container-gameOver {
