@@ -149,7 +149,7 @@ input {
   font-size: 18px;
   transition: 0.3s;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .btn.keyboard {
     width: 45px;
     height: 45px;
@@ -165,7 +165,7 @@ input {
   animation: none;
   display: none;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .btn.keyboard.clicked.hidden {
     width: 45px;
     height: 45px;
@@ -193,7 +193,7 @@ input {
 .container-start-howtoplay {
   display: block;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-start-howtoplay {
     text-align: center;
   }
@@ -235,7 +235,7 @@ input {
   transition: 0.3s;
   border: 1px solid transparent;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-start-icon-btnHtp {
     display: flex;
     align-items: center;
@@ -245,7 +245,7 @@ input {
 .container-start-icon-btnHtp:hover {
   border-bottom: 1px solid #FFD470;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-start-icon-btnHtp:hover {
     border: 1px solid #FFD470;
     border-radius: 10px;
@@ -306,7 +306,7 @@ input {
   right: 10px;
   top: 12px;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-settings {
     right: 10px;
     top: 5px;
@@ -402,7 +402,7 @@ input {
 .container-game-upper hr {
   margin: 20px 0;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-upper h1, .container-game-upper hr {
     display: none;
   }
@@ -414,7 +414,7 @@ input {
   font-family: "arial", sans-serif;
   font-size: 20px;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-upper .view-level {
     top: 10px;
     right: calc(50% - 25.25px);
@@ -428,7 +428,7 @@ input {
   font-family: "Rubik", sans-serif;
   letter-spacing: 2px;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-upper-word h2 {
     display: none;
   }
@@ -441,7 +441,7 @@ input {
   margin: 20px 0;
   gap: 10px;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-upper-word .word-display {
     display: flex;
     flex-wrap: wrap;
@@ -468,7 +468,7 @@ input {
   justify-content: center;
   flex-direction: column;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-keyboard {
     margin: 10px 0;
   }
@@ -482,7 +482,7 @@ input {
   grid-template-rows: repeat(3, 50px);
   gap: 10px 0;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-keyboard .container-letters {
     display: flex;
     flex-wrap: wrap;
@@ -494,7 +494,7 @@ input {
 .container-game-keyboard .table-vowels {
   width: 55%;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-game-keyboard .table-vowels {
     width: 80%;
   }
@@ -514,7 +514,7 @@ input {
   gap: 20px;
   background: rgba(7, 7, 7, 0.4117647059);
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-gameOver {
     width: 100%;
     border-right: none;
@@ -533,7 +533,7 @@ input {
   display: flex;
   gap: 10px;
 }
-@media (max-width: 375px) {
+@media (max-width: 455px) {
   .container-gameOver-buttons {
     flex-direction: column;
   }
