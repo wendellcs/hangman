@@ -5,8 +5,6 @@ const english = ["Apple", "Banana", "Orange", "Strawberry", "Grape", "Pear", "Pi
 const fruits = [portuguese, english]
 const answered = []
 
-// Destacar mais o nivel que a pessoa ta
-
 // Containers
 const containerHowToPlay = document.querySelector('.container-start-howtoplay')
 const gameContainer = document.querySelector('.container-game')
@@ -115,7 +113,7 @@ function updateCircle(letter) {
     if (!exists) {
         drawHangman()
     } else {
-        playSound(0, exists)
+        playSound(0)
     }
 
     setTimeout(() => {
@@ -309,7 +307,7 @@ function volumeLevel(level) {
 }
 
 let soundsEnabled = true
-function playSound(index, exists) {
+function playSound(index) {
     if (soundsEnabled) {
         const audio = audios[index]
         audio.volume = _volume
