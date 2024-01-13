@@ -182,7 +182,7 @@ function nextLevel() {
 
 let level = 1
 function updateLevel() {
-    if ((level + 1) > 1) {
+    if ((level + 1) > 10) {
         gameOver(true)
     } else {
         displayLevel.textContent = `${level + 1} `
