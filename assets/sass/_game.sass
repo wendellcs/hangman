@@ -169,20 +169,10 @@
             width: 100%
             margin-top: 20px
             display: grid
-            justify-content: space-between
-            grid-template-columns: repeat(7, 13%)
-            grid-template-rows: repeat(3 , 50px)
-            gap: 10px 0
+            justify-content: center
+            grid-template-columns: repeat(7, 50px)
+            gap: 10px
 
             @include utilities.mobile
-                display: flex
-                flex-wrap: wrap
-                justify-content: space-between
-                padding: 0 5px
-                margin-top: 10px
-
-        .table-vowels
-            width: 55%
-
-            @include utilities.mobile
-                width: 80%
+                grid-template-columns: repeat(5, 45px)
+                gap: 5px
